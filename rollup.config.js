@@ -3,6 +3,7 @@ import babel from 'rollup-plugin-babel'
 import replace from 'rollup-plugin-replace'
 import commonjs from 'rollup-plugin-commonjs'
 import uglify from 'rollup-plugin-uglify'
+import postcss from 'rollup-plugin-postcss'
 
 const env = process.env.NODE_ENV
 
@@ -18,6 +19,7 @@ const config = {
   format: 'umd',
   moduleName: 'ReactInfiniteLoading',
   plugins: [
+    postcss({extensions: '.css'}),
     nodeResolve(),
     babel({
       exclude: '**/node_modules/**'
