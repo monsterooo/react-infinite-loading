@@ -4,20 +4,19 @@ import './style.css';
 
 /**
  * Infinite Loading
- * scrollHeight must param, a css calc sring or number
  * @type {Object}
  */
 class Infinite extends Component {
   constructor(props) {
     super(props);
-    const { elementScroll, scrollHeight, loading, isLoading, asLoading } = this.props;
+    const { elementScroll, scrollHeight, loading, isLoading, asLoading, scrollThreshold } = this.props;
     this.state = {
       elementScroll: elementScroll,
       scrollHeight: scrollHeight,
       loading: loading,
-      isLoading: isLoading, // default show loading animation
+      isLoading: isLoading,
       asLoading: asLoading,
-      scrollThreshold: 200
+      scrollThreshold: scrollThreshold
     }
     this.isScrollWatching = false;
     this.onPageScroll = this.throttle(this.onPageScroll).bind(this);
@@ -140,7 +139,7 @@ class Infinite extends Component {
   render() {
     const { children } = this.props;
     const { loading, isLoading, asLoading, scrollHeight } = this.state;
-
+    
     return (
       <div className="infinite" ref={(e) => this.element = this.scroller = e} style={{height: scrollHeight}}>
         {children}
@@ -152,7 +151,8 @@ class Infinite extends Component {
 Infinite.defaultProps = {
   scrollHeight: 'auto',
   elementScroll: false,
-  isLoading: true
+  isLoading: true,
+  scrollThreshold: 200
 };
 Infinite.propTypes = {
   loading: PropTypes.bool,
@@ -160,6 +160,7 @@ Infinite.propTypes = {
   asLoading: PropTypes.node,
   elementScroll: PropTypes.bool,
   scrollHeight: PropTypes.any.isRequired,
+  scrollThreshold: PropTypes.num,
   handleLoading: PropTypes.func,
   children: PropTypes.node
 };
