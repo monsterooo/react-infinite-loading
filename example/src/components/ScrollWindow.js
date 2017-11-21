@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Infinite from 'react-infinite-loading';
+import pleasejs from 'pleasejs';
 
 class ScrollWindow extends Component {
   constructor(props) {
@@ -10,12 +11,13 @@ class ScrollWindow extends Component {
   componentDidMount() {
     // 模拟拉取数据
     for(var i = 0, il  = 15; i < il; i++) {
-      this.state.posts.push(randomColor1());
+      this.state.posts.push(pleasejs.make_color({hue: i % 360}));
     }
     this.setState(this.state.posts);
   }
 
   handleLoading() {
+    console.log('handleLoading...');
     this.setState({loading: true});
     for(var i = 0, il  = 5; i < il; i++) {
       this.state.posts.push(randomColor1());
@@ -32,7 +34,7 @@ class ScrollWindow extends Component {
   render() {
     return (
       <div className="container" style={{width: 80}}>
-        <Infinite handleLoading={this.handleLoading} loading={this.state.loading} isLoading={false}>
+        <Infinite handleLoading={this.handleLoading} loading={this.state.loading} scrollThreshold={400}>
           {this.getPost()}
         </Infinite>
       </div>

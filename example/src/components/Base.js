@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Infinite from 'react-infinite-loading';
+import pleasejs from 'pleasejs';
 
 class Base extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class Base extends Component {
   componentDidMount() {
     // 模拟拉取数据
     for(var i = 0, il  = 15; i < il; i++) {
-      this.state.posts.push(randomColor1());
+      this.state.posts.push(pleasejs.make_color({hue: i % 360}));
     }
     this.setState(this.state.posts);
   }
@@ -22,17 +23,17 @@ class Base extends Component {
     }
     setTimeout(() => {
       this.setState({loading: false, posts: this.state.posts});
-    }, 10000);
+    }, 2000);
   }
   getPost() {
     return this.state.posts.map((post, i) => {
-      return (<article className="post" style={{background: post, width: '80%', height: 40}}>{i}</article>)
+      return (<div className="post"><div style={{background: post}}>{i}</div></div>)
     })
   }
   render() {
     return (
-      <div className="container" style={{width: 80}}>
-        <Infinite handleLoading={this.handleLoading} loading={this.state.loading} elementScroll scrollHeight={300}>
+      <div className="container base">
+        <Infinite handleLoading={this.handleLoading} loading={this.state.loading} elementScroll scrollHeight="calc(100% - 100px)">
           {this.getPost()}
         </Infinite>
       </div>
