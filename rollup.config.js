@@ -14,7 +14,6 @@ const config = {
   ],
   globals: {
     'react': 'React'
-    //'redux': 'Redux'
   },
   format: 'umd',
   moduleName: 'ReactInfiniteLoading',
