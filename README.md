@@ -7,7 +7,7 @@ react-infinite-loading
 
 ## Installation
 
-React Redux requires React 15 or later.
+react-infinite-loading requires React 15 or later.
 
 ```
 install --save-dev react-infinite-loading
@@ -31,14 +31,22 @@ here are some control parameters, used in the component's props
 
 ```jsx
 Infinite.propTypes = {
-  loading: PropTypes.bool, // control the current status. loading = true the animation is displayed and no longer triggers handleLoading event
-  isLoading: PropTypes.bool, // whether to display the loading animation
-  asLoading: PropTypes.node, // load animation components
-  elementScroll: PropTypes.bool, // if true, scroll range as a current component on the contrary scroll range as a window
-  scrollHeight: PropTypes.any.isRequired, // set the height of the scroll container, scrollHeight={300} or scrollHeight="calc(100% - 100px)"
-  scrollThreshold: PropTypes.num, // trigger handleLoading event threshold
-  handleLoading: PropTypes.func, // scroll to the bottom event
-  children: PropTypes.node // sisplayed content
+  // control the current status. loading = true the animation is displayed and no longer triggers handleLoading event
+  loading: PropTypes.bool,
+  // whether to display the loading animation
+  isLoading: PropTypes.bool,
+  // load animation components
+  asLoading: PropTypes.node,
+  // if true, scroll range as a current component on the contrary scroll range as a window
+  elementScroll: PropTypes.bool,
+  // set the height of the scroll container, scrollHeight={300} or scrollHeight="calc(100% - 100px)"
+  scrollHeight: PropTypes.any.isRequired,
+  // trigger handleLoading event threshold
+  scrollThreshold: PropTypes.num,
+  // scroll to the bottom event
+  handleLoading: PropTypes.func,
+  // sisplayed content
+  children: PropTypes.node
 };
 ```
 

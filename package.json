@@ -1,6 +1,6 @@
 {
   "name": "react-infinite-loading",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a browser-based for react infinite scrolling plug-ins",
   "main": "dist/index.js",
   "browser": "dist/index.js",
