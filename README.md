@@ -1,5 +1,10 @@
 react-infinite-loading
-===
+=======================
+
+[![npm](https://img.shields.io/npm/dt/react-infinite-loading.svg?style=flat-square)](https://www.npmjs.com/package/react-infinite-loading)
+[![npm](https://img.shields.io/npm/v/react-infinite-loading.svg?style=flat-square)](https://www.npmjs.com/package/react-infinite-loading)
+[![npm](https://img.shields.io/npm/l/react-infinite-loading.svg?style=flat-square)](https://github.com/monsterooo/react-infinite-loading/blob/master/LICENSE)
+[![Read the Docs](https://img.shields.io/readthedocs/pip.svg)](https://github.com/monsterooo/react-infinite-loading/blob/master/README.md)
 
 ![mp4](https://github.com/monsterooo/monsterooo.github.io/raw/master/resource/react-infinite-loading.gif)
 
