@@ -14,7 +14,8 @@
     "clean": "rimraf lib dist es coverage",
     "lint": "eslint src test",
     "prepare": "npm run clean && npm run build",
-    "test": "cross-env BABEL_ENV=commonjs NODE_ENV=test mocha --compilers js:babel-register --recursive --require ./test/setup.js",
+    "test_old": "cross-env BABEL_ENV=commonjs NODE_ENV=test mocha --compilers js:babel-register --recursive --require ./test/setup.js",
+    "test": "cross-env BABEL_ENV=commonjs NODE_ENV=test jest --env=jsdom ./test/infinite.test.js",
     "test:watch": "npm test -- --watch",
     "test:cov": "cross-env NODE_ENV=test nyc npm test",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
@@ -68,6 +69,8 @@
     "codecov": "^3.0.0",
     "create-react-class": "^15.6.2",
     "cross-env": "^5.1.1",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "es3ify": "^0.2.2",
     "eslint": "^4.11.0",
     "eslint-plugin-import": "^2.8.0",
