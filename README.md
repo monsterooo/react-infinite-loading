@@ -8,7 +8,7 @@ react-infinite-loading
 
 ![mp4](https://github.com/monsterooo/monsterooo.github.io/raw/master/resource/react-infinite-loading.gif)
 
-**a browser-based for react infinite scrolling plug-ins.**
+**a react infinite scrolling component**
 
 ## Installation
 
