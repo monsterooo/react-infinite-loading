@@ -139,7 +139,7 @@ class Infinite extends Component {
   render() {
     const { children } = this.props;
     const { loading, isLoading, asLoading, scrollHeight } = this.state;
-    
+
     return (
       <div className="infinite" ref={(e) => this.element = this.scroller = e} style={{height: scrollHeight}}>
         {children}

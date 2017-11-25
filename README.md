@@ -10,6 +10,12 @@ react-infinite-loading
 
 **a react infinite scrolling component**
 
+## DEMO
+
+1. [scroll element](https://codepen.io/tudou/full/JOBPqo/)
+2. [scroll window](https://codepen.io/tudou/full/wPxvGj/)
+
+
 ## Installation
 
 react-infinite-loading requires React 15 or later.
@@ -53,6 +59,12 @@ Infinite.propTypes = {
   // sisplayed content
   children: PropTypes.node
 };
+```
+
+## Test
+
+```
+npm run test
 ```
 
 ## License
